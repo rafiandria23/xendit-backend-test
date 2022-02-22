@@ -5,7 +5,7 @@ The goal of these exercises are to assess your proficiency in software engineeri
 ## Setup
 
 1. Fork this repository to your own github profile
-2. Ensure `node (>8.6 and <= 10)` and `npm` are installed
+2. Ensure `node (>=12)` and `npm` are installed
 3. Run `npm install`
 4. Run `npm test`
 5. Run `npm start`
