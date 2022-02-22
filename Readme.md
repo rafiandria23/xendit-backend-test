@@ -49,7 +49,7 @@ Please implement the following tooling:
     3. `pre-push` should run the tests before allowing pushing using `git`
     4. `winston` should be used to replace console logs and all errors should be logged as well. Logs should go to disk.
 2. Ensure that tooling is connected to `npm test`
-3. Ensure that tests covers all possible positive, negative and edge case scenarios
+3. Ensure that tests covers possible positive and negative scenarios
 4. Create a separate pull request against `master` of your fork with the linter fixes and merge it
 5. Create a separate pull request against `master` of your fork to increase code coverage to acceptable thresholds and merge it
 6. **[BONUS]** Add integration to CI such as Travis or Circle
