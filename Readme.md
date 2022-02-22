@@ -24,12 +24,13 @@ Below will be your set of tasks to accomplish. Please work on each of these task
 
 ### Documentation
 
-Please deliver documentation of the server that clearly explains the goals of this project and clarifies the API response that is expected.
+Please deliver documentation of the server that clearly explains the goals of this project and clarifies the API request and response that is expected.
+Feel free to use any open source documentation tools such as OpenAPI / Swagger. 
 
 #### Success Criteria
 
 1. A pull request against `master` of your fork with a clear description of the change and purpose and merge it
-3. **[BONUS]** Create an easy way to deploy and view the documentation in a web format and include instructions to do so
+2. **[BONUS]** Create an easy way to deploy and view the documentation in a web format and include instructions to do so
 
 ### Implement Tooling
 
@@ -48,10 +49,11 @@ Please implement the following tooling:
     3. `pre-push` should run the tests before allowing pushing using `git`
     4. `winston` should be used to replace console logs and all errors should be logged as well. Logs should go to disk.
 2. Ensure that tooling is connected to `npm test`
-3. Create a separate pull request against `master` of your fork with the linter fixes and merge it
-4. Create a separate pull request against `master` of your fork to increase code coverage to acceptable thresholds and merge it
-5. **[BONUS]** Add integration to CI such as Travis or Circle
-6. **[BONUS]** Add Typescript support
+3. Ensure that tests covers all possible positive, negative and edge case scenarios
+4. Create a separate pull request against `master` of your fork with the linter fixes and merge it
+5. Create a separate pull request against `master` of your fork to increase code coverage to acceptable thresholds and merge it
+6. **[BONUS]** Add integration to CI such as Travis or Circle
+7. **[BONUS]** Add Typescript support
 
 ### Implement Pagination
 
@@ -75,7 +77,7 @@ Please implement the following refactors of the code:
 
 1. A pull request against `master` of your fork for each of the refactors above with:
     1. Code changes
-    2. Tests
+    2. Tests covering all possible positive, negative and edge case scenarios
 
 ### Security
 
