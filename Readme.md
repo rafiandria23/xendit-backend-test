@@ -77,7 +77,7 @@ Please implement the following refactors of the code:
 
 1. A pull request against `master` of your fork for each of the refactors above with:
     1. Code changes
-    2. Tests covering all possible positive, negative and edge case scenarios
+    2. Tests covering positive and negative scenarios
 
 ### Security
 
