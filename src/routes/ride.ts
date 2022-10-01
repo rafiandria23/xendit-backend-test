@@ -1,4 +1,4 @@
-import {Router as expressRouter} from 'express';
+import {Router as router} from 'express';
 import identifiers from '../containers/identifiers';
 import container from '../containers';
 import {
@@ -17,23 +17,23 @@ const rideController = container.get<RideControllerType>(
 	identifiers.controllers.ride,
 );
 
-const router = expressRouter();
+const rideRouter = router();
 
-router.post(
+rideRouter.post(
 	'/',
 	validateBodyMiddleware(createRideValidationSchema),
 	rideController.createRide,
 );
 
-router.get(
+rideRouter.get(
 	'/',
 	validateQueryMiddleware(getRidesValidationSchema),
 	rideController.getRides,
 );
-router.get(
+rideRouter.get(
 	'/:id',
 	validateParamsMiddleware(getRideByIdValidationSchema),
 	rideController.getById,
 );
 
-export default router;
+export default rideRouter;

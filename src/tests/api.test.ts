@@ -144,4 +144,11 @@ describe('API Tests', () => {
 			expect(result.statusCode).to.equal(404);
 		});
 	});
+
+	it('should return 404 when no route matched', async () => {
+		const result = await request(app)
+			.get('/unknown');
+
+		expect(result.statusCode).to.equal(404);
+	});
 });
