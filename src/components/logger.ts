@@ -17,11 +17,11 @@ class WinstonLogger implements WinstonLoggerType {
 					format: winston.format.simple(),
 				}),
 				new winston.transports.File({
-					filename: 'logs/winston/combined.log',
+					filename: 'logs/combined.log',
 					level: 'info',
 				}),
 				new winston.transports.File({
-					filename: 'logs/winston/errors.log',
+					filename: 'logs/errors.log',
 					level: 'error',
 				}),
 			],
