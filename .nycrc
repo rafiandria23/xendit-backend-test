@@ -8,6 +8,7 @@
 		"src/index.ts",
 		"src/components/database.ts",
 		"src/types/*.ts",
+		"src/tests/load/*.js",
 		"src/**/*.test.ts"
 	],
 	"include": [

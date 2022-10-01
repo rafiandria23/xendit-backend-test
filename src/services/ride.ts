@@ -16,10 +16,14 @@ import type {
 class RideService implements RideServiceType {
 	@inject(identifiers.components.logger) logger!: WinstonLoggerType;
 
-	private readonly repository: Repository<Ride>;
+	private readonly _repository: Repository<Ride>;
 
 	constructor() {
-		this.repository = database.getRepository(Ride);
+		this._repository = database.getRepository(Ride);
+	}
+
+	get repository() {
+		return this._repository;
 	}
 
 	async getById(id: number): Promise<Ride> {

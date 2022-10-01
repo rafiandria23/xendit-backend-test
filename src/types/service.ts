@@ -1,3 +1,4 @@
+import type {Repository} from 'sequelize-typescript';
 import type {Ride} from '../models';
 
 export type PaginationOptionsType = {
@@ -16,6 +17,7 @@ export type CreateRidePayloadType = {
 };
 
 export type RideServiceType = {
+	repository: Repository<Ride>;
 	getById(id: number): Promise<Ride>;
 	getRides(pagination: PaginationOptionsType): Promise<Ride[]>;
 	createRide(payload: CreateRidePayloadType): Promise<Ride>;
