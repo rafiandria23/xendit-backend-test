@@ -65,7 +65,7 @@ class RideController implements RideControllerType {
 		try {
 			const newRide = await this.service.createRide(payload);
 
-			return res.send(newRide);
+			return res.status(201).send(newRide);
 		} catch (err: unknown) {
 			next(err);
 		}

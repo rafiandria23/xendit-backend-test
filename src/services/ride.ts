@@ -34,7 +34,7 @@ class RideService implements RideServiceType {
 
 	async getRides(pagination: PaginationOptionsType): Promise<Ride[]> {
 		const options: FindOptions = {
-			offset: pagination.page * pagination.size,
+			offset: (pagination.page - 1) * pagination.size,
 			limit: pagination.size,
 			where: {},
 		};

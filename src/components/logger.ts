@@ -12,7 +12,6 @@ class WinstonLogger implements WinstonLoggerType {
 				service: 'ride-api',
 			},
 			format: winston.format.simple(),
-			silent: process.env.NODE_ENV === 'test' || false,
 			transports: [
 				new winston.transports.Console({
 					format: winston.format.simple(),
