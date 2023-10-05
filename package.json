@@ -28,7 +28,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"@hapi/boom": "^10.0.0",
-		"auto-bind": "^4.0.0",
+		"auto-bind": "^5.0.0",
 		"cross-env": "^7.0.3",
 		"express": "^4.17.3",
 		"inversify": "^6.0.1",
