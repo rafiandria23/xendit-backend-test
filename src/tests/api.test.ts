@@ -89,7 +89,7 @@ describe('API Tests', () => {
 		});
 
 		it('should return 400', async () => {
-			const id = faker.random.word();
+			const id = faker.word.sample();
 
 			const result = await request(app)
 				.get(`/rides/${id}`);
@@ -128,7 +128,7 @@ describe('API Tests', () => {
 			const result = await request(app)
 				.get('/rides')
 				.query({
-					page: faker.random.word(),
+					page: faker.word.sample(),
 				});
 
 			expect(result.statusCode).to.equal(400);
