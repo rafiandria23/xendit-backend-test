@@ -1,4 +1,5 @@
 import {Router as router} from 'express';
+
 import identifiers from '../containers/identifiers';
 import container from '../containers';
 import {
@@ -6,14 +7,14 @@ import {
 	validateQueryMiddleware,
 	validateParamsMiddleware,
 } from '../middlewares/validate';
-import type {RideControllerType} from '../types/controller';
+import type {RideController} from '../types/controller';
 import {
 	createRideValidationSchema,
 	getRidesValidationSchema,
 	getRideByIdValidationSchema,
 } from './validations';
 
-const rideController = container.get<RideControllerType>(
+const rideController = container.get<RideController>(
 	identifiers.controllers.ride,
 );
 

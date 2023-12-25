@@ -1,12 +1,13 @@
 import 'reflect-metadata';
+
 import identifiers from './containers/identifiers';
 import container from './containers';
-import type {WinstonLoggerType} from './types/component';
 import database from './components/database';
+import type WinstonLogger from './components/logger';
 import app from './app';
 
 const port = 8010;
-const logger = container.get<WinstonLoggerType>(identifiers.components.logger);
+const logger = container.get<WinstonLogger>(identifiers.components.logger);
 
 app.listen(port, async () => {
 	await database.sync();

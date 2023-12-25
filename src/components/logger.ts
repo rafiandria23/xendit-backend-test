@@ -1,35 +1,34 @@
 import {injectable} from 'inversify';
-import winston from 'winston';
-import type {WinstonLoggerType} from '../types/component';
+import winston, {Logger} from 'winston';
 
 @injectable()
-class WinstonLogger implements WinstonLoggerType {
-	private readonly logger: winston.Logger;
-
+class WinstonLogger extends Logger {
 	constructor() {
-		this.logger = winston.createLogger({
+		super({
 			defaultMeta: {
 				service: 'ride-api',
 			},
-			format: winston.format.simple(),
 			transports: [
 				new winston.transports.Console({
-					format: winston.format.simple(),
+					handleExceptions: true,
+					handleRejections: true,
+					format: winston.format.combine(
+						winston.format.colorize(),
+						winston.format.simple(),
+					),
 				}),
 				new winston.transports.File({
 					filename: 'logs/combined.log',
 					level: 'info',
+					format: winston.format.simple(),
 				}),
 				new winston.transports.File({
 					filename: 'logs/errors.log',
 					level: 'error',
+					format: winston.format.simple(),
 				}),
 			],
 		});
-	}
-
-	log(level: string, message: string) {
-		this.logger.log(level, message);
 	}
 }
 
