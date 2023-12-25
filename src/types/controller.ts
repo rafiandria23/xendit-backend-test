@@ -1,29 +1,26 @@
 import type {Request, Response, NextFunction} from 'express';
-import type {Ride} from '../models';
-import type {PaginationOptionsType, CreateRidePayloadType} from './service';
 
-export type GetRideByIdParamsType = {
+import type {Ride} from '../models';
+import type {Pagination, CreateRidePayload} from './service';
+
+export type GetRideByIdParam = {
 	id: number;
 };
 
-export type GetRidesQueriesType = PaginationOptionsType;
-
-export type CreateRideBodyType = CreateRidePayloadType;
-
-export type RideControllerType = {
+export type RideController = {
 	getById(
 		req: Request,
-		res: Response<Ride, GetRideByIdParamsType>,
+		res: Response<Ride, GetRideByIdParam>,
 		next: NextFunction,
-	): Promise<Response<Ride, GetRideByIdParamsType>>;
+	): Promise<Response<Ride, GetRideByIdParam> | void>;
 	getRides(
 		req: Request,
-		res: Response<Ride[], GetRidesQueriesType>,
+		res: Response<Ride[], Pagination>,
 		next: NextFunction,
-	): Promise<Response<Ride[], GetRidesQueriesType>>;
+	): Promise<Response<Ride[], Pagination> | void>;
 	createRide(
 		req: Request,
-		res: Response<Ride, CreateRideBodyType>,
+		res: Response<Ride, CreateRidePayload>,
 		next: NextFunction,
-	): Promise<Response<Ride, CreateRideBodyType>>;
+	): Promise<Response<Ride, CreateRidePayload> | void>;
 };

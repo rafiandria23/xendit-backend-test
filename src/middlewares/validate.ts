@@ -1,71 +1,62 @@
 import type {Handler} from 'express';
 import type {ObjectSchema} from 'joi';
 import Boom from '@hapi/boom';
+
 import identifiers from '../containers/identifiers';
 import container from '../containers';
-import type {WinstonLoggerType} from '../types/component';
+import type WinstonLogger from '../components/logger';
 
-const logger = container.get<WinstonLoggerType>(identifiers.components.logger);
+const logger = container.get<WinstonLogger>(identifiers.components.logger);
 
-export function validateParamsMiddleware(
-	schema: ObjectSchema<unknown>,
+export function validateParamsMiddleware<T>(
+	schema: ObjectSchema<T>,
 ): Handler {
 	return (req, res, next) => {
-		const {value, error} = schema.validate(req.params);
+		const result = schema.validate(req.params);
 
-		if (error) {
-			logger.log('error', error.message);
-			next(
-				Boom.boomify(error as Error, {
-					statusCode: 400,
-				}),
-			);
+		if (result.error) {
+			logger.log('error', result.error.stack);
+			next(Boom.badRequest(result.error));
 			return;
 		}
 
-		res.locals = value;
+		(res.locals as T) = result.value;
 
 		next();
 	};
 }
 
 export function validateQueryMiddleware<T>(
-	schema: ObjectSchema<unknown>,
+	schema: ObjectSchema<T>,
 ): Handler {
 	return (req, res, next) => {
-		const {value, error} = schema.validate(req.query);
+		const result = schema.validate(req.query);
 
-		if (error) {
-			logger.log('error', error.message);
-			next(
-				Boom.boomify(error as Error, {
-					statusCode: 400,
-				}),
-			);
+		if (result.error) {
+			logger.log('error', result.error.stack);
+			next(Boom.badRequest(result.error));
 			return;
 		}
 
-		res.locals = value;
+		(res.locals as T) = result.value;
 
 		next();
 	};
 }
 
-export function validateBodyMiddleware(schema: ObjectSchema<unknown>): Handler {
+export function validateBodyMiddleware<T>(
+	schema: ObjectSchema<T>,
+): Handler {
 	return (req, res, next) => {
-		const {value, error} = schema.validate(req.body);
+		const result = schema.validate(req.body);
 
-		if (error) {
-			logger.log('error', error.message);
-			next(
-				Boom.boomify(error as Error, {
-					statusCode: 400,
-				}),
-			);
+		if (result.error) {
+			logger.log('error', result.error.stack);
+			next(Boom.badRequest(result.error));
 			return;
 		}
 
-		res.locals = value;
+		(res.locals as T) = result.value;
 
 		next();
 	};

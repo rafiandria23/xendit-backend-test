@@ -7,7 +7,7 @@
 		"test": "tests"
 	},
 	"scripts": {
-		"test": "cross-env NODE_ENV=test mocha --exit -r reflect-metadata -r ts-node/register src/tests/*.test.ts",
+		"test": "cross-env NODE_ENV=test mocha -p -r reflect-metadata -r ts-node/register src/tests/*.test.ts -b",
 		"test:load": "node scripts/load-test.js",
 		"coverage": "nyc npm test",
 		"artillery": "artillery run src/tests/load/test.yml",
@@ -17,7 +17,7 @@
 		"compile": "tsc",
 		"compile:watch": "tsc --watch",
 		"watch": "nodemon -q dist/index.js",
-		"dev": "cross-env NODE_ENV=development run-s clean compile:watch watch",
+		"dev": "cross-env NODE_ENV=development run-p clean compile:watch watch",
 		"lint": "eslint .",
 		"prepare": "husky install"
 	},
@@ -28,7 +28,6 @@
 	"license": "ISC",
 	"dependencies": {
 		"@hapi/boom": "^10.0.0",
-		"auto-bind": "^5.0.0",
 		"cross-env": "^7.0.3",
 		"express": "^4.17.3",
 		"inversify": "^6.0.1",

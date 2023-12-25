@@ -18,52 +18,52 @@ export default class Ride extends Model<Ride> {
 		primaryKey: true,
 		autoIncrement: true,
 	})
-		id: number;
+	declare id: number;
 
 	/* eslint-disable @typescript-eslint/naming-convention */
 
 	@column({
 		type: DataType.DECIMAL,
 	})
-		start_lat: number;
+	declare start_lat: number;
 
 	@column({
 		type: DataType.DECIMAL,
 	})
-		start_long: number;
+	declare start_long: number;
 
 	@column({
 		type: DataType.DECIMAL,
 	})
-		end_lat: number;
+	declare end_lat: number;
 
 	@column({
 		type: DataType.DECIMAL,
 	})
-		end_long: number;
+	declare end_long: number;
 
 	@column({
 		type: DataType.TEXT,
 	})
-		rider_name: string;
+	declare rider_name: string;
 
 	@column({
 		type: DataType.TEXT,
 	})
-		driver_name: string;
+	declare driver_name: string;
 
 	@column({
 		type: DataType.TEXT,
 	})
-		driver_vehicle: string;
+	declare driver_vehicle: string;
 
 	@CreatedAt
 	@column
-		created_at: Date;
+	declare created_at: Date;
 
 	@UpdatedAt
 	@column
-		updated_at: Date;
+	declare updated_at: Date;
 
 	/* eslint-enable @typescript-eslint/naming-convention */
 }

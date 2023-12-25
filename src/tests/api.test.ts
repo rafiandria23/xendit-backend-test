@@ -11,24 +11,24 @@ describe('API Tests', () => {
 
 	const payload = {
 		/* eslint-disable @typescript-eslint/naming-convention */
-		start_lat: faker.datatype.number({
+		start_lat: faker.number.int({
 			min: -90,
 			max: 90,
 		}),
-		start_long: faker.datatype.number({
+		start_long: faker.number.int({
 			min: -180,
 			max: 180,
 		}),
-		end_lat: faker.datatype.number({
+		end_lat: faker.number.int({
 			min: -90,
 			max: 90,
 		}),
-		end_long: faker.datatype.number({
+		end_long: faker.number.int({
 			min: -180,
 			max: 180,
 		}),
-		rider_name: faker.name.fullName(),
-		driver_name: faker.name.fullName(),
+		rider_name: faker.person.fullName(),
+		driver_name: faker.person.fullName(),
 		driver_vehicle: faker.vehicle.vehicle(),
 		/* eslint-enable @typescript-eslint/naming-convention */
 	};
@@ -98,7 +98,7 @@ describe('API Tests', () => {
 		});
 
 		it('should return 404', async () => {
-			const id = faker.datatype.number({min: 1});
+			const id = faker.number.int({min: 1});
 
 			const result = await request(app)
 				.get(`/rides/${id}`);

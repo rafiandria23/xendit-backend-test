@@ -1,12 +1,13 @@
 import type {Repository} from 'sequelize-typescript';
+
 import type {Ride} from '../models';
 
-export type PaginationOptionsType = {
+export type Pagination = {
 	page: number;
 	size: number;
 };
 
-export type CreateRidePayloadType = {
+export type CreateRidePayload = {
 	start_lat: number;
 	start_long: number;
 	end_lat: number;
@@ -16,9 +17,9 @@ export type CreateRidePayloadType = {
 	driver_vehicle: string;
 };
 
-export type RideServiceType = {
+export type RideService = {
 	repository: Repository<Ride>;
 	getById(id: number): Promise<Ride>;
-	getRides(pagination: PaginationOptionsType): Promise<Ride[]>;
-	createRide(payload: CreateRidePayloadType): Promise<Ride>;
+	getRides(pagination: Pagination): Promise<Ride[]>;
+	createRide(payload: CreateRidePayload): Promise<Ride>;
 };

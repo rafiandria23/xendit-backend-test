@@ -5,24 +5,24 @@ const {faker} = require('@faker-js/faker');
 function generateCreateData(_, ctx, __, next) {
 	/* eslint-disable camelcase */
 	ctx.vars = {
-		start_lat: faker.datatype.number({
+		start_lat: faker.number.int({
 			min: -90,
 			max: 90,
 		}),
-		start_long: faker.datatype.number({
+		start_long: faker.number.int({
 			min: -180,
 			max: 180,
 		}),
-		end_lat: faker.datatype.number({
+		end_lat: faker.number.int({
 			min: -90,
 			max: 90,
 		}),
-		end_long: faker.datatype.number({
+		end_long: faker.number.int({
 			min: -180,
 			max: 180,
 		}),
-		rider_name: faker.name.fullName(),
-		driver_name: faker.name.fullName(),
+		rider_name: faker.person.fullName(),
+		driver_name: faker.person.fullName(),
 		driver_vehicle: faker.vehicle.vehicle(),
 	};
 

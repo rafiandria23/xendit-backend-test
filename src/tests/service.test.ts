@@ -3,13 +3,14 @@ import {expect} from 'chai';
 import sinon from 'sinon';
 import Boom from '@hapi/boom';
 import {faker} from '@faker-js/faker';
+
 import identifiers from '../containers/identifiers';
 import container from '../containers';
-import type {RideServiceType, CreateRidePayloadType} from '../types/service';
+import type {RideService, CreateRidePayload} from '../types/service';
 import type {Ride} from '../models';
 
 const sandbox = sinon.createSandbox();
-const service = container.get<RideServiceType>(identifiers.services.ride);
+const service = container.get<RideService>(identifiers.services.ride);
 
 describe('RideService', () => {
 	afterEach(() => {
@@ -18,27 +19,27 @@ describe('RideService', () => {
 
 	const ride = {
 		/* eslint-disable @typescript-eslint/naming-convention */
-		id: faker.datatype.number({
+		id: faker.number.int({
 			min: 1,
 		}),
-		start_lat: faker.datatype.number({
+		start_lat: faker.number.int({
 			min: -90,
 			max: 90,
 		}),
-		start_long: faker.datatype.number({
+		start_long: faker.number.int({
 			min: -180,
 			max: 180,
 		}),
-		end_lat: faker.datatype.number({
+		end_lat: faker.number.int({
 			min: -90,
 			max: 90,
 		}),
-		end_long: faker.datatype.number({
+		end_long: faker.number.int({
 			min: -180,
 			max: 180,
 		}),
-		rider_name: faker.name.fullName(),
-		driver_name: faker.name.fullName(),
+		rider_name: faker.person.fullName(),
+		driver_name: faker.person.fullName(),
 		driver_vehicle: faker.vehicle.vehicle(),
 		created_at: new Date(),
 		updated_at: new Date(),
@@ -57,7 +58,7 @@ describe('RideService', () => {
 		});
 
 		it('should return 404', async () => {
-			const id = faker.datatype.number({
+			const id = faker.number.int({
 				min: 1,
 			});
 			const findByPkStub = sandbox.stub(service.repository, 'findByPk')
@@ -85,10 +86,10 @@ describe('RideService', () => {
 				] as Ride[]);
 
 			const result = await service.getRides({
-				page: faker.datatype.number({
+				page: faker.number.int({
 					min: 1,
 				}),
-				size: faker.datatype.number({
+				size: faker.number.int({
 					min: 1,
 				}),
 			});
@@ -105,10 +106,10 @@ describe('RideService', () => {
 
 			try {
 				await service.getRides({
-					page: faker.datatype.number({
+					page: faker.number.int({
 						min: 1,
 					}),
-					size: faker.datatype.number({
+					size: faker.number.int({
 						min: 1,
 					}),
 				});
@@ -127,7 +128,7 @@ describe('RideService', () => {
 			const createStub = sandbox.stub(service.repository, 'create')
 				.resolves(ride as Ride);
 
-			const payload: CreateRidePayloadType = {
+			const payload: CreateRidePayload = {
 				/* eslint-disable @typescript-eslint/naming-convention */
 				start_lat: ride.start_lat,
 				start_long: ride.start_long,
@@ -152,7 +153,7 @@ describe('RideService', () => {
 			let err: unknown;
 
 			try {
-				await service.createRide({} as CreateRidePayloadType);
+				await service.createRide({} as CreateRidePayload);
 			} catch (error: unknown) {
 				err = error;
 			}
