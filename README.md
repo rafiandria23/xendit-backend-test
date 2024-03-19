@@ -1,4 +1,19 @@
-# Xendit Coding Exercise
+# Xendit Backend Test
+
+[![GitHub Actions Build](https://github.com/rafiandria23/xendit-backend-test/actions/workflows/ci.yaml/badge.svg)](https://github.com/rafiandria23/xendit-backend-test/actions/workflows/ci.yaml)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=coverage)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=rafiandria23_xendit-backend-test&metric=bugs)](https://sonarcloud.io/summary/new_code?id=rafiandria23_xendit-backend-test)
+
+## Xendit Coding Exercise
 
 The goal of these exercises are to assess your proficiency in software engineering that is related to the daily work that we do at Xendit. Please follow the instructions below to complete the assessment.
 
@@ -9,7 +24,7 @@ The goal of these exercises are to assess your proficiency in software engineeri
 3. Run `npm install`
 4. Run `npm test`
 5. Run `npm start`
-6. Hit the server to test health `curl localhost:8010/health` and expect a `200` response 
+6. Hit the server to test health `curl localhost:8010/health` and expect a `200` response
 
 ## Tasks
 
@@ -25,7 +40,7 @@ Below will be your set of tasks to accomplish. Please work on each of these task
 ### Documentation
 
 Please deliver documentation of the server that clearly explains the goals of this project and clarifies the API request and response that is expected.
-Feel free to use any open source documentation tools such as OpenAPI / Swagger. 
+Feel free to use any open source documentation tools such as OpenAPI / Swagger.
 
 #### Success Criteria
 
