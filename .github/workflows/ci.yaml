@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Dependency Installation
+        run: npm ci
+      - name: Testing
+        run: npm run coverage
+      - name: Compilation
+        run: npm run compile
+      - name: Analysis
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
