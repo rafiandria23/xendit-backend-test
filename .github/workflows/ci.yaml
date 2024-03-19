@@ -17,7 +17,8 @@ jobs:
         run: npm ci
       - name: Testing
         run: npm run coverage
-      - run: npm run compile
+      - name: Compilation
+        run: npm run compile
       - name: Analysis
         uses: SonarSource/sonarcloud-github-action@master
         env:
