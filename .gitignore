@@ -65,3 +65,6 @@ dist
 
 # database
 database/database.sqlite
+
+# macOS
+.DS_Store

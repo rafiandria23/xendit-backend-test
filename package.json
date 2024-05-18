@@ -9,7 +9,7 @@
 	"scripts": {
 		"test": "cross-env NODE_ENV=test mocha -p -r reflect-metadata -r ts-node/register src/**/*.test.ts -b",
 		"test:load": "node scripts/load-test.js",
-		"coverage": "nyc npm test",
+		"coverage": "nyc yarn test",
 		"artillery": "artillery run src/tests/load/test.yml",
 		"api": "node dist/index.js",
 		"start": "cross-env NODE_ENV=production run-s clean compile api",
@@ -71,5 +71,6 @@
 		"supertest": "^7.0.0",
 		"ts-node": "^10.9.1",
 		"typescript": "^5.0.0"
-	}
+	},
+	"packageManager": "yarn@1.22.22+sha256.c17d3797fb9a9115bf375e31bfd30058cac6bc9c3b8807a3d8cb2094794b51ca"
 }
