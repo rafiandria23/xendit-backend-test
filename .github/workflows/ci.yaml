@@ -14,11 +14,11 @@ jobs:
         with:
           node-version: 20
       - name: Dependency Installation
-        run: npm ci
+        run: yarn --frozen-lockfile
       - name: Testing
-        run: npm run coverage
+        run: yarn coverage
       - name: Compilation
-        run: npm run compile
+        run: yarn compile
       - name: Analysis
         uses: SonarSource/sonarcloud-github-action@master
         env:
