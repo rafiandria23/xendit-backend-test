@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { Router as router } from 'express';
 import YAML from 'yamljs';
 import SwaggerUI from 'swagger-ui-express';

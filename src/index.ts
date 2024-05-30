@@ -10,7 +10,7 @@ const port = 8010;
 const logger = container.get<WinstonLogger>(identifiers.components.logger);
 
 app.listen(port, async () => {
-	await database.sync();
+  await database.sync();
 
-	logger.log('info', `App started and listening on port ${port}`);
+  logger.log('info', `App started and listening on port ${port}`);
 });
