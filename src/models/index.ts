@@ -1,1 +1,1 @@
-export {default as Ride} from './ride';
+export { default as Ride } from './ride';

@@ -1,18 +1,18 @@
 openapi: 3.0.0
 
 info:
-  title: "Ride API"
+  title: 'Ride API'
   version: 1.1.0
 
 tags:
-  - name: "Rides"
+  - name: 'Rides'
 
 paths:
   /rides:
     post:
       tags:
-        - "Rides"
-      summary: "Create Ride"
+        - 'Rides'
+      summary: 'Create Ride'
       requestBody:
         content:
           application/json:
@@ -49,63 +49,63 @@ paths:
                   type: string
                   nullable: false
               required:
-                - "start_lat"
-                - "start_long"
-                - "end_lat"
-                - "end_long"
-                - "rider_name"
-                - "driver_name"
-                - "driver_vehicle"
+                - 'start_lat'
+                - 'start_long'
+                - 'end_lat'
+                - 'end_long'
+                - 'rider_name'
+                - 'driver_name'
+                - 'driver_vehicle'
               example:
                 start_lat: 801
                 start_long: 10
                 end_lat: 10
                 end_long: 80
-                rider_name: "Jane Doe"
-                driver_name: "John Doe"
-                driver_vehicle: "BMW M3"
+                rider_name: 'Jane Doe'
+                driver_name: 'John Doe'
+                driver_vehicle: 'BMW M3'
       responses:
         201:
-          description: "Success"
+          description: 'Success'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Ride"
+                $ref: '#/components/schemas/Ride'
               example:
                 id: 1
                 start_lat: 80
                 start_long: 10
                 end_lat: 80
                 end_long: 10
-                rider_name: "Jane Doe"
-                driver_name: "John Doe"
-                driver_vehicle: "BMW M3"
-                created_at: "2022-10-01T15:25:15.295Z"
-                updated_at: "2022-10-01T15:25:15.295Z"
+                rider_name: 'Jane Doe'
+                driver_name: 'John Doe'
+                driver_vehicle: 'BMW M3'
+                created_at: '2022-10-01T15:25:15.295Z'
+                updated_at: '2022-10-01T15:25:15.295Z'
         400:
-          description: "Validation Error"
+          description: 'Validation Error'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
               example:
                 statusCode: 400
-                error: "Bad Request"
+                error: 'Bad Request'
                 message: '"start_lat" must be less than 90'
     get:
       tags:
-        - "Rides"
-      summary: "Get All Rides"
+        - 'Rides'
+      summary: 'Get All Rides'
       parameters:
         - in: query
-          name: "page"
+          name: 'page'
           schema:
             type: number
             minimum: 1
             nullable: false
           required: false
         - in: query
-          name: "size"
+          name: 'size'
           schema:
             type: number
             minimum: 1
@@ -114,52 +114,52 @@ paths:
           required: false
       responses:
         200:
-          description: "Success"
+          description: 'Success'
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Ride"
+                  $ref: '#/components/schemas/Ride'
               example:
                 - id: 1
                   start_lat: 80
                   start_long: 10
                   end_lat: 80
                   end_long: 10
-                  rider_name: "Jane Doe"
-                  driver_name: "John Doe"
-                  driver_vehicle: "BMW M3"
-                  created_at: "2022-10-01T15:25:15.295Z"
-                  updated_at: "2022-10-01T15:25:15.295Z"
+                  rider_name: 'Jane Doe'
+                  driver_name: 'John Doe'
+                  driver_vehicle: 'BMW M3'
+                  created_at: '2022-10-01T15:25:15.295Z'
+                  updated_at: '2022-10-01T15:25:15.295Z'
         400:
-          description: "Validation Error"
+          description: 'Validation Error'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
               example:
                 statusCode: 400
-                error: "Bad Request"
+                error: 'Bad Request'
                 message: '"page" must be a number'
         404:
-          description: "No Rides Found"
+          description: 'No Rides Found'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
               example:
                 statusCode: 404
-                error: "Not Found"
-                message: "Could not find any rides"
+                error: 'Not Found'
+                message: 'Could not find any rides'
   /rides/{id}:
     get:
       tags:
-        - "Rides"
-      summary: "Get Ride by ID"
+        - 'Rides'
+      summary: 'Get Ride by ID'
       parameters:
         - in: path
-          name: "id"
+          name: 'id'
           schema:
             type: number
             minimum: 1
@@ -167,42 +167,42 @@ paths:
           required: true
       responses:
         200:
-          description: "Success"
+          description: 'Success'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Ride"
+                $ref: '#/components/schemas/Ride'
               example:
                 id: 1
                 start_lat: 80
                 start_long: 10
                 end_lat: 80
                 end_long: 10
-                rider_name: "Jane Doe"
-                driver_name: "John Doe"
-                driver_vehicle: "BMW M3"
-                created_at: "2022-10-01T15:25:15.295Z"
-                updated_at: "2022-10-01T15:25:15.295Z"
+                rider_name: 'Jane Doe'
+                driver_name: 'John Doe'
+                driver_vehicle: 'BMW M3'
+                created_at: '2022-10-01T15:25:15.295Z'
+                updated_at: '2022-10-01T15:25:15.295Z'
         400:
-          description: "Validation Error"
+          description: 'Validation Error'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
               example:
                 statusCode: 400
-                error: "Bad Request"
+                error: 'Bad Request'
                 message: '"id" must be a number'
         404:
-          description: "Ride Not Found"
+          description: 'Ride Not Found'
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Error"
+                $ref: '#/components/schemas/Error'
               example:
                 statusCode: 404
-                error: "Not Found"
-                message: "Could not find any rides"
+                error: 'Not Found'
+                message: 'Could not find any rides'
 
 components:
   schemas:

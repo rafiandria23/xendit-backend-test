@@ -1,5 +1,5 @@
-import type {Handler} from 'express';
-import type {ObjectSchema} from 'joi';
+import type { Handler } from 'express';
+import type { ObjectSchema } from 'joi';
 import Boom from '@hapi/boom';
 
 import identifiers from '../containers/identifiers';
@@ -8,56 +8,50 @@ import type WinstonLogger from '../components/logger';
 
 const logger = container.get<WinstonLogger>(identifiers.components.logger);
 
-export function validateParamsMiddleware<T>(
-	schema: ObjectSchema<T>,
-): Handler {
-	return (req, res, next) => {
-		const result = schema.validate(req.params);
+export function validateParamsMiddleware<T>(schema: ObjectSchema<T>): Handler {
+  return (req, res, next) => {
+    const result = schema.validate(req.params);
 
-		if (result.error) {
-			logger.log('error', result.error.stack);
-			next(Boom.badRequest(result.error));
-			return;
-		}
+    if (result.error) {
+      logger.log('error', result.error.stack);
+      next(Boom.badRequest(result.error));
+      return;
+    }
 
-		(res.locals as T) = result.value;
+    (res.locals as T) = result.value;
 
-		next();
-	};
+    next();
+  };
 }
 
-export function validateQueryMiddleware<T>(
-	schema: ObjectSchema<T>,
-): Handler {
-	return (req, res, next) => {
-		const result = schema.validate(req.query);
+export function validateQueryMiddleware<T>(schema: ObjectSchema<T>): Handler {
+  return (req, res, next) => {
+    const result = schema.validate(req.query);
 
-		if (result.error) {
-			logger.log('error', result.error.stack);
-			next(Boom.badRequest(result.error));
-			return;
-		}
+    if (result.error) {
+      logger.log('error', result.error.stack);
+      next(Boom.badRequest(result.error));
+      return;
+    }
 
-		(res.locals as T) = result.value;
+    (res.locals as T) = result.value;
 
-		next();
-	};
+    next();
+  };
 }
 
-export function validateBodyMiddleware<T>(
-	schema: ObjectSchema<T>,
-): Handler {
-	return (req, res, next) => {
-		const result = schema.validate(req.body);
+export function validateBodyMiddleware<T>(schema: ObjectSchema<T>): Handler {
+  return (req, res, next) => {
+    const result = schema.validate(req.body);
 
-		if (result.error) {
-			logger.log('error', result.error.stack);
-			next(Boom.badRequest(result.error));
-			return;
-		}
+    if (result.error) {
+      logger.log('error', result.error.stack);
+      next(Boom.badRequest(result.error));
+      return;
+    }
 
-		(res.locals as T) = result.value;
+    (res.locals as T) = result.value;
 
-		next();
-	};
+    next();
+  };
 }
