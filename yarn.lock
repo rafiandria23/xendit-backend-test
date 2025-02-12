@@ -1098,9 +1098,9 @@
     levn "^0.4.1"
 
 "@faker-js/faker@^9.0.0":
-  version "9.4.0"
-  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-9.4.0.tgz#3e85604df3a318729436677565e9433d964276d2"
-  integrity sha512-85+k0AxaZSTowL0gXp8zYWDIrWclTbRPg/pm/V0dSFZ6W6D4lhcG3uuZl4zLsEKfEvs69xDbLN2cHQudwp95JA==
+  version "9.5.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-9.5.0.tgz#ce254c83706250ca8a5a0e05683608160610dd84"
+  integrity sha512-3qbjLv+fzuuCg3umxc9/7YjrEXNaKwHgmig949nfyaTx8eL4FAsvFbu+1JcFUj1YAXofhaDn6JdEUBTYuk0Ssw==
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
@@ -1108,9 +1108,9 @@
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
 "@grpc/grpc-js@^1.7.1":
-  version "1.12.5"
-  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.12.5.tgz#0064a28fe9b1ec54ac27e1c9bf70720aa01285e8"
-  integrity sha512-d3iiHxdpg5+ZcJ6jnDSOT8Z0O0VMVGy34jAnYLUX8yd36b1qn8f1TwOA/Lc7TsOh03IkPJ38eGI5qD2EjNkoEA==
+  version "1.12.6"
+  resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-1.12.6.tgz#a3586ffdfb6a1f5cd5b4866dec9074c4a1e65472"
+  integrity sha512-JXUj6PI0oqqzTGvKtzOkxtpsyPRNsrmhh41TtIz/zEB6J+AUiZZ0dxWzcMwO9Ns5rmSPuMdghlTbUuqIM48d3Q==
   dependencies:
     "@grpc/proto-loader" "^0.7.13"
     "@js-sdsl/ordered-map" "^4.4.2"
