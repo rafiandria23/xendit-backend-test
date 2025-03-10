@@ -6573,9 +6573,9 @@ internal-slot@^1.0.4:
     side-channel "^1.0.4"
 
 inversify@^7.0.0:
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/inversify/-/inversify-7.0.2.tgz#b34b706cdfe01ffe7ca21098263ef05fe9aac241"
-  integrity sha512-Bq81Jx3OQsyqpoamfckqhi9yfFXB6ey6WuOaYEN3b73fevmK5B1JivvUmT6QrNljXKhk7E3izdbZINsP/pNOdA==
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/inversify/-/inversify-7.1.0.tgz#cabece2627f764ca33f2af0d05f5cfb7ecbca756"
+  integrity sha512-f8SlUTgecMZGr/rsFK36PD84/mH0+sp0/P/TuiGo3CcJywmF5kgoXeE2RW5IjaIt1SlqS5c5V9RuQc1+B8mw4Q==
   dependencies:
     "@inversifyjs/common" "1.5.0"
     "@inversifyjs/container" "1.5.4"
