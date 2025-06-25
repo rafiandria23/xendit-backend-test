@@ -8761,9 +8761,9 @@ present@^0.0.3:
   integrity sha512-d0QMXYTKHuAO0n0IfI/x2lbNwybdNWjRQ08hQySzqMQ2M0gwh/IetTv2glkPJihFn+cMDYjK/BiVgcLcjsASgg==
 
 prettier@^3.3.3:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.6.0.tgz#18ec98d62cb0757a5d4eab40253ff3e6d0fc8dea"
-  integrity sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.6.1.tgz#cc3bce21c09a477b1e987b76ce9663925d86ae44"
+  integrity sha512-5xGWRa90Sp2+x1dQtNpIpeOQpTDBs9cZDmA/qs2vDNN2i18PdapqY7CmBeyLlMuGqXJRIOPaCaVZTLNQRWUH/A==
 
 prettyjson@^1.2.2:
   version "1.2.5"
