@@ -1274,10 +1274,10 @@
   resolved "https://registry.yarnpkg.com/@inversifyjs/common/-/common-1.5.2.tgz#6836287fef1c25dddbdf6af345a33a6d6caf6835"
   integrity sha512-WlzR9xGadABS9gtgZQ+luoZ8V6qm4Ii6RQfcfC9Ho2SOlE6ZuemFo7PKJvKI0ikm8cmKbU8hw5UK6E4qovH21w==
 
-"@inversifyjs/container@1.11.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@inversifyjs/container/-/container-1.11.0.tgz#5aadd84c972764c6b832744e9c5aa58d74f0e26e"
-  integrity sha512-NuXN6PLfsgGUIqP1eyprTR1VdQaCbFXxyTfAd01cWbEXAvNJJ1xgqHH7YJXBhvZsRypfrmuNLXesuy9/WUMF0g==
+"@inversifyjs/container@1.11.1":
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@inversifyjs/container/-/container-1.11.1.tgz#e6942781d29f7d6a7fafbbc9547026dda60c5746"
+  integrity sha512-MhgriyCm/lihOoo/ydGyBwZsKT6bUGAqQ+JM2i5JGgINLJx2g7Unt4bK+cFepHBh+um0M34VlRZFczmsHJhTSw==
   dependencies:
     "@inversifyjs/common" "1.5.2"
     "@inversifyjs/core" "5.4.0"
@@ -6540,12 +6540,12 @@ internal-slot@^1.0.4:
     side-channel "^1.0.4"
 
 inversify@^7.0.0:
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/inversify/-/inversify-7.6.0.tgz#85ad1a6d5ef96ebed9682a0b89053082e8230110"
-  integrity sha512-PM4U9uvDCffNiwNG3clD4P9RIebsF3KQhsJjAy2lsxlerYvapaoetN0oWVEE39NrG01DoeI/0YOF4T+krZOvyA==
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/inversify/-/inversify-7.6.1.tgz#5733a61d38ed249b9008da82562bd146ea3c3d49"
+  integrity sha512-a4bN7pjKP+h5ABNsf7vQNU0S5P/44RFqcUpFWXZLGEJuedF5ux3CvWGn2TfSbVbk3r7hNto6G3tR0j70nbFDKw==
   dependencies:
     "@inversifyjs/common" "1.5.2"
-    "@inversifyjs/container" "1.11.0"
+    "@inversifyjs/container" "1.11.1"
     "@inversifyjs/core" "5.4.0"
 
 ip-address@^9.0.5:
