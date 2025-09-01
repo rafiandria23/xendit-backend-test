@@ -9,18 +9,23 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - name: Dependency Installation
-        run: yarn --frozen-lockfile
-      - name: Testing
+          node-version: 'lts/*'
+      - name: Enable Corepack
+        run: |
+          corepack enable
+      - name: Install Dependencies
+        run: |
+          yarn --immutable
+      - name: Unit Test
         run: yarn coverage
-      - name: Compilation
+      - name: Compile
         run: yarn compile
-      - name: Analysis
-        uses: SonarSource/sonarcloud-github-action@master
+      - name: Analyze Code
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

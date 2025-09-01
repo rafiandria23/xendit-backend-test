@@ -6,7 +6,7 @@ import database from './components/database';
 import type WinstonLogger from './components/logger';
 import app from './app';
 
-const port = 8010;
+const port = 3000;
 const logger = container.get<WinstonLogger>(identifiers.components.logger);
 
 app.listen(port, async () => {

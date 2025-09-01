@@ -24,7 +24,7 @@ The goal of these exercises are to assess your proficiency in software engineeri
 3. Run `yarn`
 4. Run `yarn test`
 5. Run `yarn start`
-6. Hit the server to test health `curl localhost:8010/health` and expect a `200` response
+6. Hit the server to test health `curl 0.0.0.0:3000/health` and expect a `200` response
 
 ## Tasks
 

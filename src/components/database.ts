@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import WinstonLogger from './logger';
+
 import { Ride } from '../models';
 
 const logger = new WinstonLogger();
