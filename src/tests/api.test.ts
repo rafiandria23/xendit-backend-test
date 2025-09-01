@@ -1,6 +1,7 @@
 import request from 'supertest';
 import { expect } from 'chai';
 import { faker } from '@faker-js/faker';
+
 import database from '../components/database';
 import app from '../app';
 
