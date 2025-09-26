@@ -2668,9 +2668,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@inversifyjs/container@npm:1.13.0":
-  version: 1.13.0
-  resolution: "@inversifyjs/container@npm:1.13.0"
+"@inversifyjs/container@npm:1.13.1":
+  version: 1.13.1
+  resolution: "@inversifyjs/container@npm:1.13.1"
   dependencies:
     "@inversifyjs/common": "npm:1.5.2"
     "@inversifyjs/core": "npm:9.0.0"
@@ -2678,7 +2678,7 @@ __metadata:
     "@inversifyjs/reflect-metadata-utils": "npm:1.4.0"
   peerDependencies:
     reflect-metadata: ~0.2.2
-  checksum: 10c0/14d8a4a97109186c389af9ea42b5992a39e73ef9e7863ba8e2315bc6a128724f7514225d16961a364459a2fa8959d5ba98e1128576b3e76d4c42d64e86aaeee9
+  checksum: 10c0/2b76967e32202ab870da9cc900d5550ed28ea4fa53d87d3920556431c7caf51ac0d4e1b7fa4e13b926e856d6d4e33ae8ba37deaa137fe4c0e2a3c1932bb7d60e
   languageName: node
   linkType: hard
 
@@ -9353,15 +9353,13 @@ __metadata:
   linkType: hard
 
 "inversify@npm:^7.9.1":
-  version: 7.10.0
-  resolution: "inversify@npm:7.10.0"
+  version: 7.10.1
+  resolution: "inversify@npm:7.10.1"
   dependencies:
     "@inversifyjs/common": "npm:1.5.2"
-    "@inversifyjs/container": "npm:1.13.0"
+    "@inversifyjs/container": "npm:1.13.1"
     "@inversifyjs/core": "npm:9.0.0"
-  peerDependencies:
-    reflect-metadata: ~0.2.2
-  checksum: 10c0/f5ebf1d1702b1d647b4c74f860e4f9d9e94736c4dbdeb982a9fa56b7edb2999c48f43d6bc38ade86421f2428b9e9e13835ed4d6a63c322f4f77ef432dc3b0d3d
+  checksum: 10c0/fc95b9c6da01e4d8be105ce5c7540e1d2feceb86b93d72af230f825093f37c86743dbe120298626308eb187ff9107353b907600f196a7bf5d2a3c387c324fb9a
   languageName: node
   linkType: hard
 
